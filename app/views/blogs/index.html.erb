@@ -1,13 +1,26 @@
-<p><%= notice %></p>
-
+<% unless notice.nil? %>
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong><%= notice %></strong>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<% end %>
 
 <% @blogs.each do |blog| %>
 <div class="card">
   <div class="card-body">
-    <h3 class="card-title border-bottom"><%= blog.title %></h3>
+    <div class="border-bottom row">
+    <div class="col-6">
+    <h3 class="card-title"><%= blog.title %></h3>
+    </div>
+    <div class="col-6 text-right">
+    <%= link_to 'Edit', edit_blog_path(blog), class:"btn btn-secondary" %>
+    <%= link_to 'Delete', blog, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-primary"%>
+    </div>
+    </div>
     <p class="card-text"><%= blog.body %></p>
     <div class="col text-center">
-    <%= link_to 'View post details', blog, class:"btn btn-primary" %>
     </div>
   </div>
 </div>
