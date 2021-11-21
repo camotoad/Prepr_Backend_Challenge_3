@@ -4,9 +4,11 @@
 <% @blogs.each do |blog| %>
 <div class="card">
   <div class="card-body">
-    <h3 class="card-title"><%= blog.title %></h3>
+    <h3 class="card-title border-bottom"><%= blog.title %></h3>
     <p class="card-text"><%= blog.body %></p>
-    <%= link_to 'Show', blog, class:"btn btn-primary" %>
+    <div class="col text-center">
+    <%= link_to 'View post details', blog, class:"btn btn-primary" %>
+    </div>
   </div>
 </div>
 <br>

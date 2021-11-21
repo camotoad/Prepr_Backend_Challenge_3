@@ -5,3 +5,5 @@ This project is for Prepr Labs. The goal is to create a travel blog using Ruby o
 * Ruby version 3.0.2p107
 
 * Rails version 6.1.4.1
+
+* **ImageMagick must be installed or the images will not show properly**

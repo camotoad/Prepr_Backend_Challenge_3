@@ -2,7 +2,6 @@
   <% if blog.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
-
       <ul>
         <% blog.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -18,7 +17,7 @@
 
   <div class="field">
     <%= form.label :body %>
-    <%= form.text_area :body %>
+    <%= form.rich_text_area :body %>
   </div>
 
   <div class="actions">
